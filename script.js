@@ -1,4 +1,4 @@
-let currsong = new Audio("https://raw.githubusercontent.com/bhavyvaghani829-beep/spotify-clone/main/Aakhri Ishq Dhurandhar The Revenge 320 Kbps.mp3");
+let currsong = new Audio("https://raw.githubusercontent.com/bhavyvaghani829-beep/spotify-clone/main/songs/Aakhri Ishq Dhurandhar The Revenge 320 Kbps.mp3");
 let currentSongIndex = 1;
 let currentCollection = null; // Track which collection is playing
 
@@ -101,21 +101,21 @@ async function main() {
       const e = songData[k];
       if (a == 1) {
         songul.innerHTML = ` <li data-url="${e.url}">
-          <img class="invert" src="img/music.svg" alt="">
+          <img class="invert" src="images/music.svg" alt="">
           <div class="info first">${e.name}</div>
           <div class="playnow">
             <div>playnow</div>
-            <img src="img/play.svg" class="invert" alt="">
+            <img src="images/play.svg" class="invert" alt="">
           </div>
         </li>`
         a++;
       } else {
         songul.innerHTML += ` <li data-url="${e.url}">
-          <img class="invert" src="img/music.svg" alt="">
+          <img class="invert" src="images/music.svg" alt="">
           <div class="info">${e.name}</div>
           <div class="playnow">
             <div>playnow</div>
-            <img src="img/play.svg" class="invert" alt="">
+            <img src="images/play.svg" class="invert" alt="">
           </div>
         </li>`
       }
@@ -131,12 +131,12 @@ async function main() {
 
     if (pause) {
       currsong.play();
-      document.getElementById("play").src = "img/pause.svg"
+      document.getElementById("play").src = "images/pause.svg"
       document.querySelector(".songinfo").innerHTML = `${document.querySelector(".first").innerHTML}`
     }
     currsong.src = s.dataset.url;
     currsong.play();
-    document.getElementById("play").src = "img/pause.svg"
+    document.getElementById("play").src = "images/pause.svg"
     document.querySelector(".songinfo").innerHTML = `${s.querySelector(".info").innerHTML}`
   }
 
@@ -144,13 +144,13 @@ async function main() {
     document.getElementById("play").addEventListener("click", () => {
       if (currsong.paused) {
         currsong.play();
-        document.getElementById("play").src = "img/pause.svg"
+        document.getElementById("play").src = "images/pause.svg"
         if (document.querySelector(".songinfo").innerHTML === "") {
           document.querySelector(".songinfo").innerHTML = `${document.querySelector(".first").innerHTML}`
         }
       } else {
         currsong.pause();
-        document.getElementById("play").src = "img/play.svg"
+        document.getElementById("play").src = "images/play.svg"
       }
     })
   }
